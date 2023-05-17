@@ -1,0 +1,62 @@
+.sidebar{
+    left: 0;
+    bottom: 0;
+    top: 5vh!important;
+    position: fixed;
+    height: 100%;
+
+    
+    background-color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    border-right:solid 1px gray;
+    overflow: hidden;
+   
+
+    transition: width 600ms;
+    
+}
+.sidebar.open{
+    width: 250px;
+}
+.sidebar.closed{
+    width: 70px;
+
+    
+
+}
+.menu{
+    width: 100%;
+    background-color: whitesmoke;
+    border: 3px rgb(18, 17, 17);
+    border-bottom:solid 1px gray;
+    display: flex;
+    justify-content: center;
+
+}
+.menu:hover{
+    background-color:  rgb(200, 200, 200);;
+
+}
+
+ul.side-bar-list li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    font-size: 24px;
+    text-decoration: none;
+    border-bottom:solid 1px gray;
+    list-style: none;
+
+
+}
+ul.side-bar-list li:hover{
+    
+    background-color: rgb(200, 200, 200);
+}
+
+ul.side-bar-list li a{
+    display: inline;
+    white-space: nowrap;
+}
