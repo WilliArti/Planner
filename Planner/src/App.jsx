@@ -21,9 +21,15 @@ function App() {
           <Route index element={<Home />} />
           <Route path='calendar' element={<CalendarLayout />}>
             <Route index element={<Calendarweek/>}/>
-            <Route path='week' element={<Calendarweek/>}/>
-            <Route path='day' element={<Calendarday/>}/>
-            <Route path='month' element={<Calendarmonth/>}/>
+            <Route path='week' element={<Calendarweek/>}>
+              <Route path=':id' element={<Calendarweek />}/>
+            </Route>
+            <Route path='day' element={<Calendarday/>}>
+              <Route path=':id' element={<Calendarday />}/>
+            </Route>
+              <Route path='month' element={<Calendarmonth/>}>
+            <Route path=':id' element={<Calendarmonth />}/>
+            </Route>
           </Route>
         </Route>
       </Routes>
