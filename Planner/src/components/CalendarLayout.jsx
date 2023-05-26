@@ -8,7 +8,6 @@ import {BsChevronRight} from "react-icons/bs"
 
 function CalendarLayout() {
     const dt = DateTime.now()
-    console.log(dt.toISODate())
     const location = useLocation().pathname
     let param  = useParams().id
     let date 
@@ -30,11 +29,6 @@ function CalendarLayout() {
     function handleChange(value) {
         navigate(`${value}/${param ? param : ''}`);
     }
-
-    
-
-    
-   
     
     //* datepath is used now in which calendar path i am right now
     function datepath() {
@@ -63,15 +57,13 @@ function CalendarLayout() {
                 </div>
                 <div>
                     <select onChange={event => handleChange(event.target.value)}>
-                        <option>Select View</option>
-                        <option value="day">day</option>
                         <option value="week">week</option>
+                        <option value="day">day</option>
                         <option value="month">month</option>
                     </select>
                 </div>
             </div>
-            <Outlet />
-            <h1>CalendarLayout</h1>
+            <Outlet className='gridcontainer'/>
 
         </div> 
     );

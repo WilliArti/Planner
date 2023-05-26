@@ -3,7 +3,66 @@
     border-bottom: solid black 1px;
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     height: 8vh;
     align-items: center;
+}
+.daygrid{
+    display: grid;
+    grid-template-rows: repeat(24,60px);
+    
+    
+    
+}
+.weekgrid{
+    display: grid;
+    grid-template-columns: repeat(7, calc(100%/7) );
+    height: 650px;
+    overflow-y: scroll;
+    width: 91%;
+    margin-left: 50px;
+    
+    border: solid 1px black;
+    border-radius: 10px;
+    position: relative;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    
+}
+.hour{
+    border: solid 1px black;
+
+}
+.gridcontainer{
+    justify-items: center;
+    background-color: aqua;
+}
+.dayin{
+    display: flex;
+    justify-content: center;
+    border-left: solid 1px black;
+    color: white;
+}
+.weekin{
+    display: grid;
+    grid-template-columns: repeat(7, calc(100%/7) );
+    width: 91%;
+    
+    background-color: #1E90FF;
+    margin-left: 50px;
+    margin-top: 20px;
+    
+    border: solid 1px black;
+}
+.daycalendar{
+    border: solid 1px black;
+    width: 80%;
+    margin-left: 50px;
+    margin-top: 20px;
+    height: 650px;
+}
+.daycalendarday{
+    background-color: #1E90FF;
+    
+
 }
