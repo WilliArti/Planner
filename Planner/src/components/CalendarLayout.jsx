@@ -39,8 +39,8 @@ function CalendarLayout() {
         if(parts.length>=3) return parts[2]
         else return 'week'
     }
+
     
-    console.log(datepath())
 
     return ( 
         <div >
@@ -61,15 +61,10 @@ function CalendarLayout() {
                     <span>{(datepath()=='day') ? date.toFormat('DDDD') : date.toFormat('LLLL yyyy')}</span>
                 </div>
                 <div>
-                    <select onChange={event => handleChange(event.target.value)}>
-                        <option value="week" >week</option>
-                        <option value="day" selected= {datepath()=='day'}>day</option>
-                        <option value="month" selected= {datepath()=='month'}>month</option>
-            
-                    </select>
                     <SegmentedControl
                         onChange={event => handleChange(event)}
                         defaultValue={datepath()}
+                        value={datepath()}
                         data={[
                             { label: 'day', value: 'day' },
                             { label: 'week', value: 'week' },
