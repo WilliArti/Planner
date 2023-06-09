@@ -4,6 +4,8 @@ import './Calendar.css'
 import { DateTime } from "luxon";
 import {BsChevronLeft} from "react-icons/bs"
 import {BsChevronRight} from "react-icons/bs"
+import { Button, SegmentedControl } from '@mantine/core';
+
 
 
 function CalendarLayout() {
@@ -28,6 +30,7 @@ function CalendarLayout() {
 
     function handleChange(value) {
         navigate(`${value}/${param ? param : ''}`);
+
     }
     
     //* datepath is used now in which calendar path i am right now
@@ -43,24 +46,37 @@ function CalendarLayout() {
         <div >
             <div className='calendarlayout'>
                 <Link to={`${datepath()}/${dt.toISODate()}`}>
-                    <button>Today</button>
-                </Link>
-                <div>
+                <Button radius="lg">
+                    Today
+                </Button>
+                </Link >
+                <div >
                     
                     <Link to={`${datepath()}/${prev.toISODate()}`}>
-                        <BsChevronLeft />     
+                        <BsChevronLeft className='arrow'/>     
                     </Link>
                     <Link to={`${datepath()}/${next.toISODate()}`}>
-                        <BsChevronRight />
+                        <BsChevronRight className='arrow'/>
                     </Link>
                     <span>{(datepath()=='day') ? date.toFormat('DDDD') : date.toFormat('LLLL yyyy')}</span>
                 </div>
                 <div>
                     <select onChange={event => handleChange(event.target.value)}>
-                        <option value="week">week</option>
-                        <option value="day">day</option>
-                        <option value="month">month</option>
+                        <option value="week" >week</option>
+                        <option value="day" selected= {datepath()=='day'}>day</option>
+                        <option value="month" selected= {datepath()=='month'}>month</option>
+            
                     </select>
+                    <SegmentedControl
+                        onChange={event => handleChange(event)}
+                        defaultValue={datepath()}
+                        data={[
+                            { label: 'day', value: 'day' },
+                            { label: 'week', value: 'week' },
+                            { label: 'month', value: 'month' },
+                        ]}
+                    />
+
                 </div>
             </div>
             <Outlet className='gridcontainer'/>

@@ -21,14 +21,14 @@ function Calendarweek() {
                 
                 <Daygrid 
                 key={day.toFormat('ccc d')}
-                id={day.toFormat('ccc d')}
+                day={day.toFormat('ccc d')}
                 />
             
     ))
     
     const weekdays = weekday.map(day =>(
         <div className='dayin'>
-            <Link to={`/calendar/day/${day.toISODate()}`} >
+            <Link  to={`/calendar/day/${day.toISODate()}` } >
                 {day.toFormat('ccc d')} 
             </Link>
         </div>

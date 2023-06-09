@@ -1,7 +1,8 @@
 import React from 'react';
 import Hour from './Hour';
-function Daygrid() {
+function Daygrid(props) {
     let hours = [];
+    const day = props.day
 
     for (let i = 0; i <= 23; i++) {
        hours.push(i);
@@ -9,6 +10,8 @@ function Daygrid() {
     const dayhours = hours.map((hour)=> (
         <Hour
             key={hour}
+            day={day}
+            hour={hour}
         />
     )
     

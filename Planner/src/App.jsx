@@ -10,6 +10,7 @@ import Calendarweek from './calendar/Calendarweek'
 import Calendarday from './calendar/Calendarday'
 import Calendarmonth from './calendar/Calendarmonth'
 import CalendarLayout from './components/CalendarLayout'
+import Demo from './components/Demo'
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Layout />}>
           <Route index element={<Home />} />
+          <Route path='demo' element={<Demo />}/>
           <Route path='calendar' element={<CalendarLayout />}>
             <Route index element={<Calendarweek/>}/>
             <Route path='week' element={<Calendarweek/>}>

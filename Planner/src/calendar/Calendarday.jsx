@@ -2,6 +2,7 @@ import React from 'react';
 import { DateTime, Info } from "luxon";
 import Daygrid from './calendarcomponent/daygrid';
 import { useParams } from 'react-router-dom';
+
 function Calendarday() {
 
     const dt = DateTime.now()
@@ -14,7 +15,11 @@ function Calendarday() {
             <div className='daycalendarday'>
                 {date.toFormat('ccc d')}
             </div>
-            <div ><Daygrid /></div>
+            <div >
+                <Daygrid 
+                    day={date.toFormat('ccc d')}
+                />
+            </div>
             
         </div>
      );

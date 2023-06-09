@@ -13,6 +13,7 @@
     
     
     
+    
 }
 .weekgrid{
     display: grid;
@@ -63,6 +64,38 @@
 }
 .daycalendarday{
     background-color: #1E90FF;
+    color: white;
+
+}
+.arrow{
+    border-radius: 15px;
+    
+}
+.arrow:hover{
+    background-color: rgb(173, 173, 173);
+}
+.monthgrid{
+    display: grid;
+    grid-template-columns: repeat(7, calc(100%/7) );
+    height: 650px;
+    width: 91%;
+    margin-left: 50px;
+    
+    border: solid 1px black;
+    border-radius: 10px;
+    position: relative;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    
+}
+.dayinmonth{
+    display: flex;
+    justify-content: center;
+    border-left: solid 1px black;
+    border-bottom: solid 1px black;
     
 
+}
+.dayin a{
+    color: white;
 }
