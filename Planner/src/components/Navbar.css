@@ -11,6 +11,7 @@ header{
     align-items: center;
     color: #123456;
     position: fixed;
+    z-index: 100;
 }
 
 

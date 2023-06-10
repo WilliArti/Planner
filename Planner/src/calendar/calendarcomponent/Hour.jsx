@@ -1,4 +1,4 @@
-import { Modal, Button, Group } from '@mantine/core';
+import { Modal, Button, Group,TextInput, Space, Textarea } from '@mantine/core';
 import React, { useState } from 'react';
 function Hour(props) {
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -13,7 +13,23 @@ function Hour(props) {
             
         </div> 
         <Modal opened={isModalOpen} onClose={closeModal} title="">
+            
             {`${hour} ${day}`}
+            <TextInput
+                placeholder="Tiltle"
+                label="Title"
+                withAsterisk
+            />
+            <Space h='md'/>
+            
+            <input id="appt-time" type="time" name="appt-time" value={`${hour<10 ? '0'+ hour : hour}:00`} />
+            <Space h='md'/>
+            
+            <Textarea
+                label="Description"
+                withAsterisk
+            />
+            
         </Modal>
         </>
     );
